@@ -100,7 +100,7 @@ public class ProductDAO {
     
     /* Gets number of top products specified */
     /* we are gonna fake this one */
-    public ArrayList<Product> getTopProducts(int numProducts){
+    public ArrayList<Product> getTopProducts(){
         
         
         DBManager dm = new DBManager();
@@ -118,10 +118,9 @@ public class ProductDAO {
         try {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
-            int productCount = 0;
+           
             while (rs.next()) {
-                if (productCount >= numProducts)
-                    break;
+             
                 productId = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
@@ -136,7 +135,7 @@ public class ProductDAO {
                 product.setImageLocation(imageLocation);
                 product.setCategory(category);
                 productData.add(product);
-                productCount++;
+               
             }
 
         } catch (SQLException e) {
