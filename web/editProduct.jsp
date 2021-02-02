@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Product"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%-- 
     Document   : editProduct
     Created on : 2 Feb 2021, 14:01:22

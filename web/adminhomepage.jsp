@@ -68,7 +68,7 @@
 
                     <h1 class="my-4">Posters !!</h1>
                     <div class="list-group">
-                        <a href="#" class="list-group-item">Product Administration</a>
+                        <a href="productAdmin?action=listProducts" class="list-group-item">Product Administration</a>
                         <a href="userAdmin?action=listUsers" class="list-group-item">User Administration</a>
                     </div>
 

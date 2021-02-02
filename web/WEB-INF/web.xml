@@ -35,7 +35,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>productAdminServlet</servlet-name>
-        <url-pattern>/productAdminServlet</url-pattern>
+        <url-pattern>/productAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
