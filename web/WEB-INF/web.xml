@@ -17,6 +17,10 @@
         <servlet-name>userAdminServlet</servlet-name>
         <servlet-class>servlets.userAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>productAdminServlet</servlet-name>
+        <servlet-class>servlets.productAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -28,6 +32,10 @@
     <servlet-mapping>
         <servlet-name>userAdminServlet</servlet-name>
         <url-pattern>/userAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productAdminServlet</servlet-name>
+        <url-pattern>/productAdminServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

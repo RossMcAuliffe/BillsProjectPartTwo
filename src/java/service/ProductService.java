@@ -20,7 +20,6 @@ public class ProductService {
         ProductDAO pDao = new ProductDAO();
         return pDao.getTopProducts(6);
         
-    }
-        
+    }      
     
 }
