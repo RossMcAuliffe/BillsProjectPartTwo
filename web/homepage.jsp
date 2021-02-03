@@ -1,26 +1,52 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.User"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
-
+    
     <head>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <script type="text/javascript" src="javascript.js"></script>
         <title>OSHIRT</title>
-
+        
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+      
         <!-- Custom styles for this template -->
         <link href="css/shop-homepage.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
+        <style>
+    
+               .popupBox {
+                 position: absolute;
+                 left: 140px;
+               }
 
+               .popupCell {
+                  background-color: #fffafa;
+               }
+
+               .popupCell:hover {
+                 background-color: #f5ebe9;
+               }
+
+               .popupItem {
+                 color: #333;
+                 text-decoration: none;
+                 font-size: 1.2em;
+               }  
+             
+        </style>
+        
     </head>
 
-    <body>
+    <body onload="init()">
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -74,7 +100,34 @@
                 </div>
                 <!-- /.col-lg-3 -->
 
-                <div class="col-lg-9">
+            <div class="col-lg-9">
+                    
+                <br>
+    <form name="autofillform" action="autocomplete">
+      <table border="0" cellpadding="5"> 
+        <tbody>
+          <tr>
+            <td><strong>Composer Name:</strong></td>
+                        <td>
+                            <input type="text"
+                       size="40" 
+                       id="complete-field"
+                                   onkeyup="doCompletion()">
+                        </td>
+          </tr>
+          <tr>
+              <td id="auto-row" colspan="2">
+                <table id="complete-table" class="popupBox" />
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </body>
+</html>
+
+
+                    
                     <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

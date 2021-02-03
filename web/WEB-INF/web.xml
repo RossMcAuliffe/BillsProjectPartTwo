@@ -21,6 +21,10 @@
         <servlet-name>productAdminServlet</servlet-name>
         <servlet-class>servlets.productAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <servlet-class>servlets.AutoCompleteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -36,6 +40,10 @@
     <servlet-mapping>
         <servlet-name>productAdminServlet</servlet-name>
         <url-pattern>/productAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AutoCompleteServlet</servlet-name>
+        <url-pattern>/autocomplete</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
