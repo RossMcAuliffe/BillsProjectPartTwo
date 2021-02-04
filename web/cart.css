@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10 Dec 2020, 17:59:38
+    Author     : rossmcauliffe
+*/
+/* The styles for the elements */
+body {
+  padding: 0;
+  margin: 0;
+  background: #f2f6e9;
+  text-align:center;
+  
+}
+/*--- navigation bar ---*/
+.navbar {
+  background:#333333;
+  min-height:70px;
+  font-size: 20px;
+}
+.nav-link,
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+  padding: 0 15px;
+  height: 70px;
+  line-height: 70px;
+  font-size:20px;
+}
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #000;
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+br {
+    clear: both;
+}
+
+#quantity {
+    width: 2em;
+    color:black;
+}
+
+/* The styles for the tables */
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 70em;
+    align-content: center;
+}
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: .5em;
+}
+.right {
+    text-align: right;
+}
+th {
+  background-color: #333333;
+  color: white;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }

@@ -23,10 +23,6 @@
        
         <style>
     
-               .popupBox {
-                 position: absolute;
-                 left: 140px;
-               }
 
                .popupCell {
                   background-color: #fffafa;
@@ -157,8 +153,10 @@
                     </div>
 
                     <div class="row">
-
+                        
+ 
                         <c:forEach items="${products}" var="topProduct">
+                            
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="card h-100">
                                     <a href="#"><img class="card-img-top" src="images/${topProduct.imageLocation}" alt=""></a>
@@ -169,7 +167,12 @@
                                         <h5>${topProduct.price}</h5>
                                         <p class="card-text">${topProduct.description}</p>
                                         <p class="card-text">${topProduct.category}</p>
-                                    </div>
+                                        
+                                        <a href="SingleProductServlet?id=${topProduct.id}"> View
+                                        </a>
+                                        
+                                        </div>
+                                    
                                     <div class="card-footer">
                                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                                     </div>

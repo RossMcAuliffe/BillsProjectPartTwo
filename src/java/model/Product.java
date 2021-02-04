@@ -17,6 +17,19 @@ public class Product {
     private float price;
     private String imageLocation;
     private String category;
+    
+    public Product() {
+        
+    }
+    
+    public Product(long id, String name, String description, float price, String imageLocation, String category) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.imageLocation = imageLocation;
+        this.category = category;
+    }
 
     
     /**

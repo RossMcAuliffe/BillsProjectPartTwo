@@ -100,7 +100,7 @@ function parseMessages(responseXML) {
         return false;
     } else {
 
-        var composers = responseXML.getElementsByTagName("composers")[0];
+        var composers = responseXML.getElementsByTagName("products")[0];
 
         if (composers.childNodes.length > 0) {
             completeTable.setAttribute("bordercolor", "black");
@@ -108,11 +108,11 @@ function parseMessages(responseXML) {
     
             for (loop = 0; loop < composers.childNodes.length; loop++) {
                 var composer = composers.childNodes[loop];
-                var firstName = composer.getElementsByTagName("firstName")[0];
-                var lastName = composer.getElementsByTagName("lastName")[0];
+                var name = composer.getElementsByTagName("name")[0];
+                var description = composer.getElementsByTagName("description")[0];
                 var composerId = composer.getElementsByTagName("id")[0];
-                appendComposer(firstName.childNodes[0].nodeValue,
-                    lastName.childNodes[0].nodeValue,
+                appendComposer(name.childNodes[0].nodeValue,
+                    description.childNodes[0].nodeValue,
                     composerId.childNodes[0].nodeValue);
             }
         }

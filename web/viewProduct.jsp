@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="model.User"%>
+<%@page import="model.Product"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
@@ -21,6 +22,7 @@
 </head>
 
 <body>
+<% Product singleProduct = (Product) session.getAttribute("SingleProduct"); %>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -70,18 +72,19 @@
           <a href="#" class="list-group-item">Ties</a>
         </div>
       </div>
+        
       <!-- /.col-lg-3 -->
-
-      <div class="col-lg-9">
+       <% if (singleProduct != null) { %>
+       
+        <div class="col-lg-9">
 
         <div class="card mt-4">
           <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
           <div class="card-body">
-            <h3 class="card-title">Product Name</h3>
-            <h4>$24.99</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
+            <h3 class="card-title"><%= singleProduct.getName() %></h3>
+            <h4><%= singleProduct.getPrice() %></h4>
+            <h4><%= singleProduct.getDescription() %></h4>
+            
           </div>
         </div>
         <!-- /.card -->
@@ -92,10 +95,20 @@
           </div>
           <div class="card-body">
          
-            <a href="#" class="btn btn-success">Add to Cart</a>
+               <form action="CartServlet" method="post">
+                    <input type="hidden" name="productId" 
+                           value="<%= singleProduct.getId() %>">
+                    <input type="submit" 
+                           value="Add To Cart">
+              </form>    
+              
           </div>
         </div>
         <!-- /.card -->
+       <% } %>
+       
+       
+
 
       </div>
       <!-- /.col-lg-9 -->

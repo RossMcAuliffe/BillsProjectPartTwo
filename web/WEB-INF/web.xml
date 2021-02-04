@@ -22,8 +22,16 @@
         <servlet-class>servlets.productAdminServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SingleProductServlet</servlet-name>
+        <servlet-class>servlets.SingleProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>servlets.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>AutoCompleteServlet</servlet-name>
-        <servlet-class>servlets.AutoCompleteServlet</servlet-class>
+        <servlet-class>com.ajax.AutoCompleteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
@@ -40,6 +48,14 @@
     <servlet-mapping>
         <servlet-name>productAdminServlet</servlet-name>
         <url-pattern>/productAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SingleProductServlet</servlet-name>
+        <url-pattern>/SingleProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AutoCompleteServlet</servlet-name>
