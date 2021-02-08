@@ -72,7 +72,7 @@
                             <a class="nav-link" href="#">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="Logout">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -99,11 +99,12 @@
             <div class="col-lg-9">
                     
                 <br>
+                
     <form name="autofillform" action="autocomplete">
       <table border="0" cellpadding="5"> 
         <tbody>
           <tr>
-            <td><strong>Composer Name:</strong></td>
+            <td><strong>Product Name:</strong></td>
                         <td>
                             <input type="text"
                        size="40" 
@@ -162,7 +163,7 @@
                                     <a href="#"><img class="card-img-top" src="images/${topProduct.imageLocation}" alt=""></a>
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href="./viewProduct.jsp">${topProduct.name}</a>
+                                            <a>${topProduct.name}</a>
                                         </h4>
                                         <h5>${topProduct.price}</h5>
                                         <p class="card-text">${topProduct.description}</p>
@@ -193,7 +194,14 @@
         </div>
         <!-- /.container -->
 
-        <!-- Footer -->
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+    
+            <!-- Footer -->
         <footer class="py-5 bg-dark">
             <div class="container">
                 <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
@@ -201,10 +209,5 @@
             <!-- /.container -->
         </footer>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    </body>
 
 </html>

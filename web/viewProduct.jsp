@@ -79,7 +79,8 @@
         <div class="col-lg-9">
 
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+        
+          <img class="" src="images/<%= singleProduct.getImageLocation() %>" alt=""> 
           <div class="card-body">
             <h3 class="card-title"><%= singleProduct.getName() %></h3>
             <h4><%= singleProduct.getPrice() %></h4>
