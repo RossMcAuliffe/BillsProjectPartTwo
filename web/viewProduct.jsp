@@ -40,7 +40,7 @@
                                 </a>
                             </c:if>
                             <c:if test="${not empty SKUSER.firstName}">
-                                <a class="nav-link" href="./login.jsp">Hi ${SKUSER.firstName}
+                                <a class="nav-link" href="#">Logged in as ${SKUSER.firstName}
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </c:if>
@@ -52,7 +52,7 @@
                             <a class="nav-link" href="#">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="Logout">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -92,7 +92,7 @@
 
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
-            Let's Go Shopping!
+            Add to Cart
           </div>
           <div class="card-body">
          

@@ -27,7 +27,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Posters</a>
+                <a class="navbar-brand" href="#">OSHIRT</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +40,7 @@
                                 </a>
                             </c:if>
                             <c:if test="${not empty SKUSER.firstName}">
-                                <a class="nav-link" href="./login.jsp">Hi ${SKUSER.firstName}
+                                <a class="nav-link" href="#">Logged in as ${SKUSER.firstName}
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </c:if>
@@ -65,13 +65,14 @@
             <div class="row">
 
                 <div class="col-lg-3">
-
-                    <h1 class="my-4">Posters !!</h1>
+                    <br><br><br><br><br><br>
+                    
                     <div class="list-group">
                         <a href="productAdmin?action=listProducts" class="list-group-item">Product Administration</a>
                         <a href="userAdmin?action=listUsers" class="list-group-item">User Administration</a>
                     </div>
-
+                    <br><br><br><br><br><br>
+                    
                 </div>
                 <!-- /.col-lg-3 -->
 
@@ -80,7 +81,7 @@
 
                     <div class="row">
 
-                        <h1 class="pt-4"> Administration Home </h3>    
+                 
                     </div>
                     <div class="row">
 

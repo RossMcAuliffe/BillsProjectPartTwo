@@ -28,7 +28,7 @@ public class ProductDAO {
 
         DBManager dmbgr = new DBManager();
         Connection con = dmbgr.getConnection();
-        int productId = 0;
+        int id = 0;
         String description = null;
         String price = null;
         String image_location = null;
@@ -40,7 +40,7 @@ public class ProductDAO {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                productId = (rs.getInt(1));
+                id = (rs.getInt(1));
                 description = (rs.getString(3));
                 price = (rs.getString(4));
                 image_location = (rs.getString(5));
@@ -52,7 +52,7 @@ public class ProductDAO {
         }
 
         tempProduct.setName(name);
-        tempProduct.setId(productId);
+        tempProduct.setId(id);
         tempProduct.setDescription(description);
         tempProduct.setPrice(Float.parseFloat(price));
         tempProduct.setImageLocation(image_location);
@@ -61,7 +61,8 @@ public class ProductDAO {
 
     }
     
-    public Product getProductById(long productId) {
+    
+    public Product getProductById(long id) {
 
         DBManager dmbgr = new DBManager();
         Connection con = dmbgr.getConnection();
@@ -72,7 +73,7 @@ public class ProductDAO {
         String category = null;
         Product tempProduct = new Product();
 
-        String query = String.format("SELECT * FROM PRODUCTS WHERE PRODUCT_ID=%d",productId);
+        String query = String.format("SELECT * FROM PRODUCTS WHERE PRODUCT_ID=%d",id);
         try {
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
@@ -87,7 +88,7 @@ public class ProductDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        tempProduct.setId(productId);
+        tempProduct.setId(id);
         tempProduct.setName(name);
         tempProduct.setDescription(description);
         tempProduct.setPrice(Float.parseFloat(price));
@@ -105,7 +106,7 @@ public class ProductDAO {
         
         DBManager dm = new DBManager();
         Connection con = dm.getConnection();
-        int productId = 0;
+        int id = 0;
         String name = null;
         String description = null;
         float price = 0.0f;
@@ -121,14 +122,14 @@ public class ProductDAO {
            
             while (rs.next()) {
              
-                productId = (rs.getInt(1));
+                id = (rs.getInt(1));
                 name = (rs.getString(2));
                 description = (rs.getString(3));
                 price = (rs.getFloat(4));
                 imageLocation = (rs.getString(5));
                 category = (rs.getString(6));
                 Product product = new Product();
-                product.setId(productId);
+                product.setId(id);
                 product.setName(name);
                 product.setDescription(description);
                 product.setPrice(price);
@@ -146,6 +147,8 @@ public class ProductDAO {
         return productData;
           
     }
+    
+    
       public void insertProduct(Product newProduct){
         
         DBManager dmbgr = new DBManager();
@@ -156,7 +159,7 @@ public class ProductDAO {
         
             stmt = con.createStatement();
             String sql = String.format("INSERT INTO PRODUCTS(NAME,DESCRIPTION,PRICE,IMAGE_LOCATION,CATEGORY) " + 
-                            "VALUES('%s','%s','%s','%s','%s')",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory());
+                            "VALUES('%s','%s', %f , '%s' ,'%s')",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory());
             stmt.executeUpdate(sql);
         }
         catch (SQLException e){
@@ -181,7 +184,7 @@ public class ProductDAO {
         try {
         
             stmt = con.createStatement();
-            String sql = String.format("UPDATE PRODUCTS SET name='%s',description='%s',price='%s',image_location='%s',category='%s' where product_id=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId());
+            String sql = String.format("UPDATE PRODUCTS SET name='%s',description='%s',price=%f ,image_location='%s',category='%s' where product_id=%d ",newProduct.getName(),newProduct.getDescription(),newProduct.getPrice(),newProduct.getImageLocation(),newProduct.getCategory(),newProduct.getId());
             stmt.executeUpdate(sql);
         }
         catch (SQLException e){

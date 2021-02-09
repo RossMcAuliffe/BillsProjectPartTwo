@@ -9,14 +9,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      
+        <!-- Custom styles for this template -->
+        <link href="css/shop-homepage.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<title>OSHIRT</title>
 <style>
+    
 body {
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
+}
+
+nav {
+    z-index: 100 !important;
 }
 
 /* The styles for the tables */
@@ -106,7 +121,7 @@ label {
 }
 
 .btn {
-  background-color: #4CAF50;
+  background-color: black;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -144,53 +159,36 @@ span.price {
   }
 }
 </style>
+
+
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">OSHIRT</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <c:if test="${empty SKUSER.firstName}">
-                                <a class="nav-link" href="./login.jsp">Login
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </c:if>
-                            <c:if test="${not empty SKUSER.firstName}">
-                                <a class="nav-link" href="./login.jsp">Hi ${SKUSER.firstName}
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </c:if>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    
+    <!-- Navigation -->
 
+    <br><br>
 
   <div class="col-75">
     <div class="col-25">
     <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
+      <h4> OSHIRT Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
      <!-- <p><a href="#">Product 1</a> <span class="price">$15</span></p>
       <p><a href="#">Product 2</a> <span class="price">$5</span></p>
       <p><a href="#">Product 3</a> <span class="price">$8</span></p>
       <p><a href="#">Product 4</a> <span class="price">$2</span></p> -->
      <table class="center">
       <tr>
+        <th>Product ID</th>
         <th>Quantity</th>
         <th>Name</th>
         <th>Image</th>
         <th>Description</th>
         <th>Price</th>
-        <th></th>
       </tr>
     <c:forEach var="item" items="${cart.items}">
       <tr>
-        <td><c:out value='${item.product.id}'/>"</td>
+        <td><c:out value= '${item.product.id}'/>"</td>
         <td><c:out value='${item.quantity}'/>"</td>
         <td><c:out value='${item.product.name}'/></td><br>
         <td><img style='widht: 20em; height:10em;' src="images/${item.product.imageLocation}" alt=""></td>
@@ -200,9 +198,10 @@ span.price {
       </c:forEach>
        </table>
       <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+      
     </div>
   </div>
+      <br><br>
     <div class="container">
       <form action="/action_page.php">
       

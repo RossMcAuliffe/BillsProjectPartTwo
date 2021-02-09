@@ -18,6 +18,7 @@
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
 
+  
 </head>
 
 <body>
@@ -32,9 +33,6 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/SampleProductViewer/login.html">Login
-              <span class="sr-only">(current)</span>
-            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
@@ -58,7 +56,7 @@
 
       <div class="col-lg-9">
 
-         <div class="container">
+    <div class="container-A">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
@@ -80,9 +78,7 @@
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-              <hr class="my-4">
-              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+
             </form>
           </div>
         </div>
@@ -100,6 +96,12 @@
   </div>
   <!-- /.container -->
 
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
@@ -107,12 +109,6 @@
     </div>
     <!-- /.container -->
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
 
 </html>
 

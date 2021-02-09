@@ -17,41 +17,71 @@
               border-radius: 10px;
               color:#fff;
         }
+  .button {
+  background-color: black; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+}
             
         
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">OSHIRT</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index_1.html">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Catalog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">OSHIRT</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <c:if test="${empty SKUSER.firstName}">
+                                <a class="nav-link" href="./login.jsp">Login
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </c:if>
+                            <c:if test="${not empty SKUSER.firstName}">
+                                <a class="nav-link" href="./login.jsp">Logged in as ${SKUSER.firstName}
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </c:if>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="Logout">Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
     <br><br><br><br><br><br>
     
     <h1>Your cart</h1>
@@ -92,20 +122,23 @@
       </tr>
       </c:forEach>
     </table>
-
+    
+    <br>
+    
     <p><b>To change the quantity</b>, enter the new quantity 
         and click on the Update button.</p>
 
-    <form action="" method="post">
+    <form action="" class="button button1" method="post">
         <input type="hidden" name="action" value="shop">
         <input type="submit" value="Continue Shopping">
     </form>
 
-    <form action="" method="post">
+    <form action="" class="button button1" method="post">
         <input type="hidden" name="action" value="checkout">
         <input type="submit" value="Checkout">
     </form>
-
+    
+    <br><br>
     <p>&copy; Copyright ${currentYear} Mike Murach &amp; Associates, Inc.
         All rights reserved.</p>
 

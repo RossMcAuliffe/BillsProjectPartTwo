@@ -6,10 +6,10 @@
 package service;
 
 import dao.ProductDAO;
-import dao.UserDAO;
+import utils.IConstants;
 import java.util.ArrayList;
 import model.Product;
-import model.User;
+
 
 /**
  *
@@ -23,7 +23,14 @@ public class ProductService {
      ProductDAO pDao = new ProductDAO();
      return pDao.getTopProducts();
         
-  }    
+  }  
+
+    public Product getProduct(long id){
+        ProductDAO productDAO = new ProductDAO();
+        Product product = productDAO.getProductById(id);
+        return product;
+    }
+     
     
     public ArrayList<Product> getTopProducts(){
        
@@ -33,11 +40,6 @@ public class ProductService {
         
     }
     
-    public Product getProduct(long productId){
-        ProductDAO productDAO = new ProductDAO();
-        Product product = productDAO.getProductById(productId);
-        return product;
-    }
     
     
     public void insertProduct(Product nProduct){

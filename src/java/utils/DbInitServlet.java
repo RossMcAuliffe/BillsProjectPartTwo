@@ -41,7 +41,7 @@ public class DbInitServlet extends HttpServlet {
 
         SetupDb sdb = new SetupDb();
         sdb.createTables();
-        sdb.insertSetupData();; //To change body of generated methods, choose Tools | Templates.
+        sdb.insertSetupData(); //To change body of generated methods, choose Tools | Templates.
         sdb.showData();
     }
 

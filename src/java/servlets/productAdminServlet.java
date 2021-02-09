@@ -54,13 +54,13 @@ public class productAdminServlet extends HttpServlet {
             request.setAttribute("products", products);
             request.getRequestDispatcher("/productAdmin.jsp").forward(request, response);
         }
-        if (action.equals("insertUser")){
+        if (action.equals("insertProduct")){
             insertProduct(request,response);
             ArrayList<Product> products = pServ.getTopProducts();
             request.setAttribute("products", products);
             request.getRequestDispatcher("/productAdmin.jsp").forward(request, response);
         }
-        if (action.equals("updateCompleteUser")){
+        if (action.equals("updateCompleteProduct")){
             updateProduct(request,response);
             ArrayList<Product> products = pServ.getTopProducts();
             request.setAttribute("users", products);
@@ -74,8 +74,8 @@ public class productAdminServlet extends HttpServlet {
                 long pId = Long.parseLong(productId);
                 pServ = new ProductService();
                 Product oldProduct = pServ.getProduct(pId);
-                request.setAttribute("oldUser", oldProduct);
-                request.getRequestDispatcher("/editUser.jsp").forward(request, response);
+                request.setAttribute("oldProduct", oldProduct);
+                request.getRequestDispatcher("/editProduct.jsp").forward(request, response);
             }
                
         }
@@ -105,14 +105,14 @@ public class productAdminServlet extends HttpServlet {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String price = request.getParameter("price");
-        String image_location = request.getParameter("image_location");
+        String imagelocation = request.getParameter("imagelocation");
         String category = request.getParameter("category");
         
         Product newProduct = new Product();
         newProduct.setName(name);
         newProduct.setDescription(description);
         newProduct.setPrice(Float.parseFloat(price));
-        newProduct.setImageLocation(image_location);
+        newProduct.setImageLocation(imagelocation);
         newProduct.setCategory(category);
         
         ProductService pServ = new ProductService();
@@ -128,15 +128,15 @@ public class productAdminServlet extends HttpServlet {
         String name = request.getParameter("name");
         String description = request.getParameter("description");
         String price = request.getParameter("price");
-        String image_location = request.getParameter("image_location");
+        String imagelocation = request.getParameter("imagelocation");
         String category = request.getParameter("category");
         
-        Product newProduct = new Product();
+       Product newProduct = new Product();
         newProduct.setId(id);
         newProduct.setName(name);
         newProduct.setDescription(description);
         newProduct.setPrice(Float.parseFloat(price));
-        newProduct.setImageLocation(image_location);
+        newProduct.setImageLocation(imagelocation);
         newProduct.setCategory(category);
         
         ProductService pServ = new ProductService();
